@@ -151,6 +151,20 @@
             transform: translateY(-2px);
         }
 
+        /* ── Download CV Button ── */
+        .btn-cv {
+            background-color: transparent;
+            border: 1px solid #94a3b8;
+            color: #94a3b8;
+        }
+
+        .btn-cv:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background-color: var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
         /* * NAVIGATION 
          */
         header {
@@ -530,8 +544,222 @@
             color: var(--accent);
         }
 
-        /* * CONTACT SECTION 
-         */
+        /* ── Project Action Buttons (Dual: GitHub + Details) ── */
+        .project-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Base style for both project buttons */
+        .btn-project {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 9px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            border: none;
+        }
+
+        /* GitHub Button — outlined teal */
+        .btn-github {
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-github:hover {
+            background: var(--accent-glow);
+            transform: translateY(-2px);
+        }
+
+        /* Project Details Button — solid teal */
+        .btn-details {
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-details:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        /* ── Project Details Modal Overlay ── */
+
+        /* Dark backdrop that covers the whole screen */
+        #project-modal-overlay {
+            display: none; /* Hidden by default; toggled by JS */
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 40px 20px;
+            animation: fadeIn 0.25s ease;
+        }
+
+        /* Fade-in animation for the overlay */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        /* The white/dark card box inside the overlay */
+        .modal-box {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(45, 212, 191, 0.2);
+            border-radius: 16px;
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        /* Slide-up entrance animation for the modal box */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Close X button in the top-right corner */
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-secondary);
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: rgba(45,212,191,0.15);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Modal header area */
+        .modal-header {
+            margin-bottom: 28px;
+        }
+
+        /* Small label above title */
+        .modal-label {
+            color: var(--accent);
+            font-family: monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Modal project title */
+        .modal-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 8px;
+            color: var(--text-primary);
+        }
+
+        /* Scrollable modal body with project content */
+        .modal-body {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Section headings inside the modal */
+        .modal-section-title {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-family: monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 24px 0 10px;
+        }
+
+        /* Regular paragraph text inside modal */
+        .modal-body p {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        /* Tool/tag pills inside modal */
+        .modal-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .modal-tag {
+            background: rgba(45, 212, 191, 0.1);
+            color: var(--accent);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-family: monospace;
+        }
+
+        /* Image gallery strip in the modal */
+        .modal-images {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .modal-images img {
+            width: 100%;
+            max-width: 360px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Highlighted result/impact box */
+        .modal-impact {
+            background: rgba(45, 212, 191, 0.05);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+            padding: 14px 18px;
+            margin-top: 8px;
+            color: var(--text-secondary);
+        }
+
+        /* Divider line between modal sections */
+        .modal-divider {
+            border: none;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            margin: 20px 0;
+        }
+
+        /* ── Responsive: stack buttons vertically on small screens ── */
+        @media (max-width: 480px) {
+            .project-actions {
+                flex-direction: column;
+            }
+            .btn-project {
+                justify-content: center;
+            }
+            .modal-box {
+                padding: 24px 18px;
+            }
+        }
         #contact {
             text-align: center;
             max-width: 600px;
@@ -643,29 +871,51 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- ============================================================
+         HERO SECTION
+         Contains: Name + Title + Strong Value Proposition + CTA Buttons
+         ============================================================ -->
     <section id="hero">
         <div class="container hero-container">
             <div class="hero-content reveal">
+
+                <!-- Greeting Label -->
                 <span class="hero-pre">Hi, my name is</span>
+
+                <!-- Name -->
                 <h1 class="hero-title">Omar Fares.</h1>
-                <h2 class="hero-subtitle">I turn raw data into insights that drive business decisions.</h2>
+
+                <!-- Title -->
+                <h2 class="hero-subtitle">Data Analyst &amp; BI Developer</h2>
+
+                <!-- Strong Value Proposition — business-focused, concise -->
                 <p class="hero-desc">
-                    I am a results-driven Data Analyst with a strong background in software engineering. 
-                    I specialize in building automated data pipelines, transforming data into meaningful dashboards, visualizations, and actionable insights using Python, SQL, Power BI, and Excel.
-                    I help businesses understand their performance, optimize operations, and make data-driven decisions with confidence.
+                    I help businesses turn raw data into clear, actionable insights.
+                    Using Python, SQL, Power BI, and Excel, I build dashboards and reports
+                    that drive smarter decisions, reduce inefficiency, and reveal growth opportunities.
                 </p>
+
+                <!-- CTA Buttons including Download CV -->
                 <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">View Projects</a>
-                    <a href="#contact" class="btn btn-solid">Contact Me</a>
+                    <a href="#projects" class="btn btn-primary">
+                        <i data-lucide="folder-open"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-solid">
+                        <i data-lucide="mail"></i> Contact Me
+                    </a>
+                    <!-- Download CV Button — update the href to your actual CV file path -->
+                    <a href="cv/Omar_Fares_CV.pdf" download class="btn btn-cv">
+                        <i data-lucide="download"></i> Download CV
+                    </a>
                 </div>
+
             </div>
             
             <div class="hero-image-wrapper reveal">
                 <div class="hero-photo">
                     <!-- Placeholder for user photo -->
 
-                     <img src="My photo.jpg" alt="Omar Fares" style="width:100%; height:100%; object-fit:cover;"
+                     <img src="images/My photo.jpg" alt="Omar Fares" style="width:100%; height:100%; object-fit:cover;"
                     -->
                     <!-- To add real photo, replace inner div with: <img src="your-photo-url.jpg" alt="Omar Fares" style="width:100%; height:100%; object-fit:cover;"> -->
                 </div>
@@ -685,11 +935,11 @@
                 <h3 class="service-title">Data Cleaning & Visualization</h3>
                 <p class="service-desc">Transforming complex datasets into clear, actionable dashboards using PowerBI, Tableau, and Plotly.</p>
             </div>
-            <!-- Service 2 -->
+            <!-- Service 2 — Business Reporting & Insights (replaces Data Engineering) -->
             <div class="service-card">
-                <div class="service-icon"><i data-lucide="database" size="32"></i></div>
-                <h3 class="service-title">Data Engineering</h3>
-                <p class="service-desc">Building robust ETL pipelines and optimizing SQL databases for performance and reliability.</p>
+                <div class="service-icon"><i data-lucide="trending-up" size="32"></i></div>
+                <h3 class="service-title">Business Reporting &amp; Insights</h3>
+                <p class="service-desc">Delivering clear, decision-ready reports and KPI summaries that help stakeholders understand performance and act with confidence.</p>
             </div>
             <!-- Service 3 -->
             <div class="service-card">
@@ -799,57 +1049,65 @@
         </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- ============================================================
+         PROJECTS SECTION
+         Each card has TWO options:
+           1. GitHub Button  → opens the GitHub repository in a new tab
+           2. Details Button → opens a full project details modal overlay
+              containing: images, problem statement, tools, insights,
+              results/impact, and a short technical explanation.
+         ============================================================ -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title reveal"><span style="color:var(--accent); font-size:0.7em; margin-right:10px;">03.</span>Selected Projects</h2>
             
             <div class="projects-grid">
-                    <!--Project_1-->
+
+                <!-- ── PROJECT 1: Coffee Shop BI Suite ─────────────── -->
                 <div class="project-card reveal">
                     <div class="project-thumbnail">
-                        <img src="3rd_project.png" alt="Project3">
+                        <img src="images/3rd_project.png" alt="Coffee Shop BI Suite">
                     </div>
                     <div class="project-content">
                         <div class="project-header-row">
                             <i data-lucide="folder" class="folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/OmarFares134/Coffee-Shop-Business-Intelligence-Suite." target="_blank"><i data-lucide="github"></i></a>
-                            </div>
                         </div>
                         <h3 class="project-title">Coffee Shop Business Intelligence Suite</h3>
                         <p class="project-desc">
-                                A complete end-to-end Power BI project analyzing a coffee shop business across five dashboards: Sales, Customers, Products Performance, Time Trends, Financial.
-                                The work included cleaning and modeling the data into a star schema, creating key DAX measures (Revenue, Profit, Margins, YTD), and building fully interactive dashboards that reveal insights on sales performance, customer behavior, product profitability, and inventory efficiency.                        </p>
+                            A complete end-to-end Power BI project analyzing a coffee shop business across five dashboards: Sales, Customers, Products, Branch Operations, and Inventory.
+                        </p>
                         <div class="project-tags">
                             <span>Power BI</span>
                             <span>Python</span>
                             <span>Power Query</span>
+                        </div>
 
+                        <!-- Dual Action Buttons -->
+                        <div class="project-actions">
+                            <!-- Option 1: Go to GitHub -->
+                            <a href="https://github.com/OmarFares134/Coffee-Shop-Business-Intelligence-Suite." target="_blank" class="btn-project btn-github">
+                                <i data-lucide="github"></i> GitHub Repo
+                            </a>
+                            <!-- Option 2: Open Project Details Modal -->
+                            <button class="btn-project btn-details" onclick="openProjectModal('project1')">
+                                <i data-lucide="layout-dashboard"></i> Project Details
+                            </button>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
+
+                <!-- ── PROJECT 2: Sales Performance Dashboard ─────── -->
                 <div class="project-card reveal">
                     <div class="project-thumbnail">
-                        <!-- Thumbnail Placeholder -->
-                        <img src="1st_project.png" alt="Project1">
-                        
+                        <img src="images/1st_project.png" alt="Sales Performance Dashboard">
                     </div>
                     <div class="project-content">
                         <div class="project-header-row">
                             <i data-lucide="folder" class="folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/OmarFares134/Retail-Sales-Dashboard" target="_blank"><i data-lucide="github"></i></a>
-                                <a href="#"><i data-lucide="external-link"></i></a>
-                            </div>
                         </div>
                         <h3 class="project-title">Sales Performance Dashboard</h3>
                         <p class="project-desc">
-                            This project includes two Power BI dashboards: one for Sales Performance and another for Product Performance.
-                            I built a full data pipeline using SQL Server, Python (Pandas), Excel, and Power BI—cleaning and transforming the raw data, handling missing values, and creating optimized SQL Views for faster reporting. The final dashboards deliver clear KPIs, 
-                            drill-down filters, and trends that support business decision-making.
+                            Two Power BI dashboards (Sales & Product Performance) built on a full pipeline: SQL Server, Python, and Power BI — delivering KPIs, drill-down filters, and actionable trends.
                         </p>
                         <div class="project-tags">
                             <span>Power BI</span>
@@ -857,38 +1115,79 @@
                             <span>SQL</span>
                             <span>Power Query</span>
                         </div>
+
+                        <!-- Dual Action Buttons -->
+                        <div class="project-actions">
+                            <a href="https://github.com/OmarFares134/Retail-Sales-Dashboard" target="_blank" class="btn-project btn-github">
+                                <i data-lucide="github"></i> GitHub Repo
+                            </a>
+                            <button class="btn-project btn-details" onclick="openProjectModal('project2')">
+                                <i data-lucide="layout-dashboard"></i> Project Details
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
+                <!-- ── PROJECT 3: Market Sales Analytics ──────────── -->
                 <div class="project-card reveal">
                     <div class="project-thumbnail">
-                        <img src="2nd_project.png" alt="Project2">
+                        <img src="images/2nd_project.png" alt="Market Sales Analytics">
                     </div>
                     <div class="project-content">
                         <div class="project-header-row">
                             <i data-lucide="folder" class="folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/OmarFares134/Market_sales_Excel-Dashboard" target="_blank"><i data-lucide="github"></i></a>
-                            </div>
                         </div>
-                        <h3 class="project-title">Market sales Analytics</h3>
+                        <h3 class="project-title">Market Sales Analytics</h3>
                         <p class="project-desc">
-                            This project focuses on market sales analytics, where I used Excel, Power Query, and Power Pivot to clean and prepare the raw dataset, perform exploratory analysis, and uncover key trends. I built an interactive dashboard using PivotTables, PivotCharts, and slicers to highlight customer behavior, sales performance, and essential business KPIs in a clear and actionable format.                        </p>
+                            Used Excel, Power Query, and Power Pivot to clean data, perform EDA, and build an interactive dashboard with PivotTables, PivotCharts, and slicers revealing sales KPIs.
+                        </p>
                         <div class="project-tags">
                             <span>Excel</span>
                             <span>Power Query</span>
                             <span>Power Pivot</span>
-                            
+                        </div>
+
+                        <!-- Dual Action Buttons -->
+                        <div class="project-actions">
+                            <a href="https://github.com/OmarFares134/Market_sales_Excel-Dashboard" target="_blank" class="btn-project btn-github">
+                                <i data-lucide="github"></i> GitHub Repo
+                            </a>
+                            <button class="btn-project btn-details" onclick="openProjectModal('project3')">
+                                <i data-lucide="layout-dashboard"></i> Project Details
+                            </button>
                         </div>
                     </div>
                 </div>
 
-        
-
-            </div>
+            </div><!-- end .projects-grid -->
         </div>
     </section>
+
+    <!-- ============================================================
+         PROJECT DETAILS MODAL OVERLAY
+         Opens when user clicks "Project Details" on any project card.
+         Contains: images, problem, tools, insights, results, explanation.
+         Closed via the X button or clicking the dark backdrop.
+         ============================================================ -->
+    <div id="project-modal-overlay" onclick="handleOverlayClick(event)">
+        <div class="modal-box" id="modal-box">
+
+            <!-- Close Button -->
+            <button class="modal-close" onclick="closeProjectModal()">
+                <i data-lucide="x"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <span class="modal-label">Project Details</span>
+                <h2 class="modal-title" id="modal-title">Project Title</h2>
+            </div>
+
+            <!-- Modal Body — dynamically populated by JS -->
+            <div class="modal-body" id="modal-body"></div>
+
+        </div>
+    </div>
 
     <!-- CONTACT -->
     <section id="contact">
@@ -900,7 +1199,7 @@
             </p>
             
             <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="mailto:3omar10099@gmail.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
+                <a href="/cdn-cgi/l/email-protection#9eadf1f3ffecafaeaea7a7def9f3fff7f2b0fdf1f3" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
                     <i data-lucide="mail"></i> Email Me
                 </a>
                 <a href="https://wa.me/+201012648879" target="_blank" class="btn btn-whatsapp" style="padding: 16px 32px; font-size: 1.1rem;">
@@ -909,7 +1208,7 @@
             </div>
             
             <div style="margin-top: 50px; display: flex; justify-content: center; gap: 24px;">
-                <a href="https://www.linkedin.com/in/omar-fares10/" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+                <a href="https://www.linkedin.com/in/omar-fares-872294191/" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
                     <i data-lucide="linkedin" width="24" height="24"></i>
                 </a>
                 <a href="https://github.com/OmarFares134" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
@@ -927,7 +1226,7 @@
     </footer>
 
     <!-- JAVASCRIPT -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // 1. Initialize Icons
         lucide.createIcons();
 
@@ -1076,15 +1375,171 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
+                        top: targetElement.offsetTop - 80,                        behavior: 'smooth'
                     });
                 }
             });
         });
+
+        // ============================================================
+        // PROJECT DETAILS MODAL SYSTEM
+        // ============================================================
+        // Data store for all three projects.
+        // Edit each object to update the content shown in the modal.
+        // Fields: title, githubUrl, images[], problem, tools[],
+        //         insights[], results, tech
+        // ============================================================
+        const projectData = {
+
+            // ── Project 1: Coffee Shop BI Suite ──────────────────────
+            project1: {
+                title: "Coffee Shop Business Intelligence Suite",
+                githubUrl: "https://github.com/OmarFares134/Coffee-Shop-Business-Intelligence-Suite.",
+                images: ["images/3rd_project.png"],
+                problem: "The coffee shop chain lacked a unified view of their operations across multiple branches. Management had no clear visibility into which products drove profit, how inventory was performing, or what customer segments were most valuable.",
+                tools: ["Power BI", "Python", "Pandas", "Power Query", "DAX", "Star Schema Modeling"],
+                insights: [
+                    "Top 20% of products generated over 65% of total revenue.",
+                    "Branch #3 showed the highest operational efficiency by OEE metrics.",
+                    "Customer retention dropped significantly during Q2 — linked to a seasonal menu change.",
+                    "Inventory waste was highest in perishable add-ons, suggesting over-ordering."
+                ],
+                results: "Management adopted the dashboards as their primary decision tool, reducing weekly reporting time by ~4 hours. Branch operations improved after acting on inventory insights.",
+                tech: "Data was extracted, cleaned, and modeled into a star schema using Python (Pandas) and Power Query. Five interconnected Power BI dashboards were built with shared DAX measures including Revenue, Profit, Margin %, and YTD comparisons. Slicers and cross-filtering allow drill-down at branch, product, and time levels."
+            },
+
+            // ── Project 2: Sales Performance Dashboard ───────────────
+            project2: {
+                title: "Sales Performance Dashboard",
+                githubUrl: "https://github.com/OmarFares134/Retail-Sales-Dashboard",
+                images: ["images/1st_project.png"],
+                problem: "A retail business needed clearer insight into their sales cycle. Raw transaction data was scattered across Excel files and a SQL database with no consistent reporting layer — making it hard to track performance over time.",
+                tools: ["Power BI", "SQL Server", "Python", "Pandas", "Excel", "Power Query"],
+                insights: [
+                    "Sales declined 18% in Q3 — attributed to a specific product category underperforming.",
+                    "Top 10 customers accounted for 42% of total revenue.",
+                    "Product margin analysis revealed pricing issues in 3 key SKUs.",
+                    "Month-over-month trends showed a clear seasonal spike every November."
+                ],
+                results: "Delivered two production-ready dashboards adopted by the sales and product teams. Enabled weekly KPI reviews and replaced 3 separate manual Excel reports.",
+                tech: "Built an end-to-end pipeline: raw data was extracted from SQL Server using optimized views and joins, cleaned and transformed using Python (Pandas), then loaded into Power BI. Power Query handled final shaping. The dashboards use dynamic measures and a date table for accurate time intelligence."
+            },
+
+            // ── Project 3: Market Sales Analytics ────────────────────
+            project3: {
+                title: "Market Sales Analytics",
+                githubUrl: "https://github.com/OmarFares134/Market_sales_Excel-Dashboard",
+                images: ["images/2nd_project.png"],
+                problem: "A market sales team was managing performance tracking entirely in static spreadsheets with no dynamic filtering or trend analysis. Decision-making was slow and error-prone due to manually updated summaries.",
+                tools: ["Excel", "Power Query", "Power Pivot", "PivotTables", "PivotCharts", "DAX (Excel)"],
+                insights: [
+                    "Saturday and Sunday generated 35% more revenue than weekdays on average.",
+                    "The top 3 product categories accounted for 58% of all sales volume.",
+                    "Customer frequency dropped after the 3rd purchase — indicating a retention gap.",
+                    "Regional breakdown revealed the North region consistently outperformed targets."
+                ],
+                results: "The interactive Excel dashboard replaced 5 static reports. The sales manager reported a 60% reduction in time spent on weekly summaries.",
+                tech: "Raw data was imported and cleaned through Power Query (handling nulls, type errors, and duplicates). Power Pivot was used to create a relational data model and define calculated measures. PivotTables and PivotCharts with slicers provide fully dynamic, filterable views of all KPIs."
+            }
+        };
+
+        // ── openProjectModal(projectId) ──────────────────────────────
+        // Called by the "Project Details" button on each card.
+        // Builds the modal HTML from projectData and shows the overlay.
+        function openProjectModal(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+
+            // Populate the modal title
+            document.getElementById('modal-title').textContent = data.title;
+
+            // Build images HTML
+            const imagesHTML = data.images.map(src =>
+                `<img src="${src}" alt="${data.title}">`
+            ).join('');
+
+            // Build tool tag pills HTML
+            const toolsHTML = data.tools.map(tool =>
+                `<span class="modal-tag">${tool}</span>`
+            ).join('');
+
+            // Build key insights list HTML
+            const insightsHTML = data.insights.map(i =>
+                `<li style="margin-bottom:6px;">→ ${i}</li>`
+            ).join('');
+
+            // Inject all sections into the modal body
+            document.getElementById('modal-body').innerHTML = `
+
+                <!-- Project preview images -->
+                <p class="modal-section-title">Project Images</p>
+                <div class="modal-images">${imagesHTML}</div>
+                <hr class="modal-divider">
+
+                <!-- What problem was solved -->
+                <p class="modal-section-title">Problem Statement</p>
+                <p>${data.problem}</p>
+                <hr class="modal-divider">
+
+                <!-- Technologies and tools used -->
+                <p class="modal-section-title">Tools Used</p>
+                <div class="modal-tags">${toolsHTML}</div>
+                <hr class="modal-divider">
+
+                <!-- Key analytical findings -->
+                <p class="modal-section-title">Key Insights</p>
+                <ul style="padding-left:4px; list-style:none; color:var(--text-secondary);">
+                    ${insightsHTML}
+                </ul>
+                <hr class="modal-divider">
+
+                <!-- Measurable outcomes and business impact -->
+                <p class="modal-section-title">Results & Impact</p>
+                <div class="modal-impact">${data.results}</div>
+                <hr class="modal-divider">
+
+                <!-- How it was built technically -->
+                <p class="modal-section-title">Technical Explanation</p>
+                <p>${data.tech}</p>
+
+                <!-- Convenience GitHub link at the bottom -->
+                <div style="margin-top:28px; text-align:right;">
+                    <a href="${data.githubUrl}" target="_blank" class="btn-project btn-github">
+                        <i data-lucide="github"></i> View on GitHub
+                    </a>
+                </div>
+            `;
+
+            // Show the overlay
+            document.getElementById('project-modal-overlay').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Lock background scroll
+
+            // Re-run Lucide to render icons injected dynamically
+            lucide.createIcons();
+        }
+
+        // ── closeProjectModal() ──────────────────────────────────────
+        // Hides the modal and restores page scrolling.
+        function closeProjectModal() {
+            document.getElementById('project-modal-overlay').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // ── handleOverlayClick(event) ────────────────────────────────
+        // Allows clicking the dark backdrop to dismiss the modal.
+        // Clicks inside the modal box itself are ignored.
+        function handleOverlayClick(event) {
+            if (event.target === document.getElementById('project-modal-overlay')) {
+                closeProjectModal();
+            }
+        }
+
+        // ── Escape key listener ──────────────────────────────────────
+        // Press Escape to close the modal from anywhere on the page.
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeProjectModal();
+        });
+
     </script>
 </body>
-
 </html>
-
-
