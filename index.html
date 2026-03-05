@@ -438,7 +438,127 @@
             font-family: monospace;
         }
 
-        /* * PROJECTS / WORK 
+        /* * EXPERIENCE SECTION
+         */
+        .experience-timeline {
+            position: relative;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), transparent);
+        }
+
+        .exp-item {
+            position: relative;
+            padding: 0 0 48px 36px;
+        }
+
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        .exp-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 28px 32px;
+            transition: var(--transition);
+        }
+
+        .exp-card:hover {
+            border-color: var(--accent);
+            transform: translateX(4px);
+            box-shadow: 0 8px 30px rgba(45, 212, 191, 0.08);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .exp-role {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .exp-date {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            background: rgba(45, 212, 191, 0.08);
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .exp-company {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .exp-bullets li {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 10px;
+            line-height: 1.6;
+        }
+
+        .exp-bullets li::before {
+            content: '▸';
+            color: var(--accent);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .exp-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .exp-tag {
+            font-size: 0.8rem;
+            font-family: monospace;
+            color: var(--accent);
+            background: rgba(45, 212, 191, 0.08);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* * EXPERIENCE SECTION
          */
         .projects-grid {
             display: grid;
@@ -860,6 +980,7 @@
                 <ul class="nav-links">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
                 </ul>
@@ -914,9 +1035,7 @@
                 <div class="hero-photo">
                     <!-- Placeholder for user photo -->
 
-                     <img src="images/My photo.jpg" alt="Omar Fares" style="width:100%; height:100%; object-fit:cover;"
-                    -->
-                    <!-- To add real photo, replace inner div with: <img src="your-photo-url.jpg" alt="Omar Fares" style="width:100%; height:100%; object-fit:cover;"> -->
+                    <img src="images/My photo.jpg" alt="Omar Fares" style="width:100%; height:100%; object-fit:cover;">
                 </div>
             </div>
         </div>
@@ -969,26 +1088,31 @@
                 </div>
 
                 <div class="stat-card">
-                    <h3 style="margin-bottom: 20px; color: var(--text-primary);">Experience Highlight</h3>
-                    <div style="margin-bottom: 16px;">
-                        <span style="color: var(--accent); font-size: 0.9rem; font-family: monospace;">2025 - Present</span>
-                        <h4 style="font-size: 1.1rem; font-weight: 600;">Data Analyst & BI Developer</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 5px;">Freelance / Contract</p>
+                    <h3 style="margin-bottom: 20px; color: var(--text-primary);">Quick Facts</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div>
+                            <span style="color: var(--accent); font-size: 0.85rem; font-family: monospace;">FOCUS</span>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 4px;">Data Analysis · BI Development · Storytelling with Data</p>
+                        </div>
+                        <div>
+                            <span style="color: var(--accent); font-size: 0.85rem; font-family: monospace;">TOOLS</span>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 4px;">Python · SQL · Power BI · Tableau · Excel</p>
+                        </div>
+                        <div>
+                            <span style="color: var(--accent); font-size: 0.85rem; font-family: monospace;">EXPERIENCE</span>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 4px;">NASA Space Apps Challenge · NTI Internship · Freelance Projects</p>
+                        </div>
+                        <div>
+                            <span style="color: var(--accent); font-size: 0.85rem; font-family: monospace;">STATUS</span>
+                            <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 4px;">Open to new opportunities</p>
+                        </div>
                     </div>
-                    <ul style="font-size: 0.9rem; color: var(--text-secondary); list-style-type: disc; padding-left: 20px; line-height: 1.6;">
-                        <li>Analyzed complex datasets to uncover trends, patterns, and key business insights..</li>
-                        <li>Built performance dashboards for automation departments (OEE calculations).</li>
-                        <li>Developed data-cleaning and preprocessing workflows using Python (Pandas, NumPy).</li>
-                        <li>Wrote optimized SQL queries to extract, join, and model data from multiple sources</li>
-                    </ul>
                 </div>
 
 
-                
+                </div><!-- end .about-grid -->
         </div>
-    </section>
-
-    <!-- SKILLS (New Dedicated Section) -->
+    </section> 
     <section id="skills">
         <div class="container">
             <h2 class="section-title reveal"><span style="color:var(--accent); font-size:0.7em; margin-right:10px;">02.</span>Technical Skills</h2>
@@ -1050,11 +1174,106 @@
     </section>
 
     <!-- ============================================================
+         EXPERIENCE SECTION
+         ============================================================ -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title reveal"><span style="color:var(--accent); font-size:0.7em; margin-right:10px;">03.</span>Experience</h2>
+
+            <div class="experience-timeline">
+
+                <!-- ── Experience 1: NASA Space Apps ── -->
+                <div class="exp-item reveal">
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Data Analyst</h3>
+                            <span class="exp-date">Oct 2025</span>
+                        </div>
+                        <p class="exp-company">
+                            <i data-lucide="rocket" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:5px;"></i>
+                            NASA International Space Apps Challenge
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Collected and merged 12 datasets (15,000+ rows each) from NASA sources into a single unified dataset, enabling a clean foundation for downstream analysis and modeling.</li>
+                            <li>Cleaned and preprocessed multi-source data — handling missing values, type inconsistencies, and structural mismatches — to prepare a production-ready dataset for ML model development.</li>
+                            <li>Extracted and communicated key insights that directly informed team decisions and shaped the project's analytical direction during the competition.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Python</span>
+                            <span class="exp-tag">Pandas</span>
+                            <span class="exp-tag">Data Merging</span>
+                            <span class="exp-tag">EDA</span>
+                            <span class="exp-tag">ML Preprocessing</span>
+                            <span class="exp-tag">NASA Datasets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Experience 2: NTI Internship ── -->
+                <div class="exp-item reveal">
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Data Analysis Intern</h3>
+                            <span class="exp-date">Sep 2025</span>
+                        </div>
+                        <p class="exp-company">
+                            <i data-lucide="building-2" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:5px;"></i>
+                            National Telecommunication Institute (NTI)
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Applied Python and SQL for end-to-end data cleaning and exploratory analysis on real-world telecommunication datasets.</li>
+                            <li>Built interactive dashboards and structured reports using Tableau and Excel, translating raw data into clear, decision-ready visuals for stakeholders.</li>
+                            <li>Completed a full analysis cycle — from raw data ingestion through insight delivery — reinforcing practical skills in the complete data analyst workflow.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Python</span>
+                            <span class="exp-tag">SQL</span>
+                            <span class="exp-tag">Tableau</span>
+                            <span class="exp-tag">Excel</span>
+                            <span class="exp-tag">Data Cleaning</span>
+                            <span class="exp-tag">Reporting</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Experience 3: Freelance ── -->
+                <div class="exp-item reveal">
+                    <div class="exp-card">
+                        <div class="exp-header">
+                            <h3 class="exp-role">Data Analyst &amp; BI Developer</h3>
+                            <span class="exp-date">2025 – Present</span>
+                        </div>
+                        <p class="exp-company">
+                            <i data-lucide="briefcase" style="width:14px;height:14px;display:inline;vertical-align:middle;margin-right:5px;"></i>
+                            Freelance / Contract
+                        </p>
+                        <ul class="exp-bullets">
+                            <li>Analyzed complex datasets to uncover trends, patterns, and key business insights that supported strategic decisions.</li>
+                            <li>Built performance dashboards for automation departments, including OEE calculations and operational KPI tracking.</li>
+                            <li>Developed robust data-cleaning and preprocessing workflows using Python (Pandas, NumPy) to ensure analysis-ready data.</li>
+                            <li>Wrote optimized SQL queries to extract, join, and model data from multiple relational sources.</li>
+                        </ul>
+                        <div class="exp-tags">
+                            <span class="exp-tag">Python</span>
+                            <span class="exp-tag">SQL</span>
+                            <span class="exp-tag">Power BI</span>
+                            <span class="exp-tag">Pandas</span>
+                            <span class="exp-tag">NumPy</span>
+                            <span class="exp-tag">OEE Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- end .experience-timeline -->
+        </div>
+    </section>
+
+    <!-- ============================================================
          PROJECTS SECTION
          ============================================================ -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title reveal"><span style="color:var(--accent); font-size:0.7em; margin-right:10px;">03.</span>Selected Projects</h2>
+            <h2 class="section-title reveal"><span style="color:var(--accent); font-size:0.7em; margin-right:10px;">04.</span>Selected Projects</h2>
             
             <div class="projects-grid">
                  <!-- ── PROJECT 3 ──────────── -->
@@ -1189,14 +1408,14 @@
     <!-- CONTACT -->
     <section id="contact">
         <div class="container reveal">
-            <p style="color: var(--accent); font-family: monospace; margin-bottom: 16px;">04. What's Next?</p>
+            <p style="color: var(--accent); font-family: monospace; margin-bottom: 16px;">05. What's Next?</p>
             <h2 style="font-size: 3rem; margin-bottom: 24px; font-weight: 700;">Get In Touch</h2>
             <p class="contact-text">
                 I am currently open to new opportunities in Data Analysis. Whether you have a question about my projects or just want to say hi, my inbox is always open!
             </p>
             
             <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="3omar10099@gmail.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
+                <a href="mailto:3omar10099@gmail.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
                     <i data-lucide="mail"></i> Email Me
                 </a>
                 <a href="https://wa.me/+201012648879" target="_blank" class="btn btn-whatsapp" style="padding: 16px 32px; font-size: 1.1rem;">
@@ -1205,7 +1424,7 @@
             </div>
             
             <div style="margin-top: 50px; display: flex; justify-content: center; gap: 24px;">
-                <a href="www.linkedin.com/in/omar-fares10" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+                <a href="https://www.linkedin.com/in/omar-fares10" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
                     <i data-lucide="linkedin" width="24" height="24"></i>
                 </a>
                 <a href="https://github.com/OmarFares134" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
@@ -1496,7 +1715,7 @@ project2: {
     dataModel: "Galaxy Schema (Fact Constellation)",
     views: 15,
     dashboards: 5,
-    daxMeasures: 25+,
+    daxMeasures: 81,
     advancedFeatures: [
       "RFM Segmentation",
       "Cohort Retention Matrix",
