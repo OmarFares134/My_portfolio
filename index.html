@@ -1424,32 +1424,31 @@ project1: {
 },
 
             // ── Project 2: Sales Performance Dashboard ───────────────
-            project2: {
-                title: "Sales Performance Dashboard",
-                githubUrl: "https://github.com/OmarFares134/Retail-Sales-Dashboard",
-                images: [           "images/second_project/dashboard_landing.png"
-                                    "images/second_project/dashboard_executive.png",
-                                    "images/second_project/dashboard_customer.png",
-                                    "images/second_project/dashboard_marketplace.png",
-                                    "images/second_project/dashboard_operations.png",
-                                    "images/second_project/dashboard_finance.png"],
-                problem: "Olist, a Brazilian e-commerce marketplace, was experiencing hidden business fragility behind healthy-looking revenue charts. 97% of customers never returned after their first purchase, late deliveries were silently destroying review scores, and revenue was dangerously concentrated in just 10 of 73 product categories — yet none of these risks were visible in standard reporting.",
-                tools: ["Power BI", "SQL Server", "Python", "Pandas", "Power Query"],
-                insights: [
-                    "Sales declined 18% in Q3 — attributed to a specific product category underperforming.",
-                    "Top 10 customers accounted for 42% of total revenue.",
-                    "Product margin analysis revealed pricing issues in 3 key SKUs.",
-                    "Month-over-month trends showed a clear seasonal spike every November."
-                ],
-                results: "Delivered two production-ready dashboards adopted by the sales and product teams. Enabled weekly KPI reviews and replaced 3 separate manual Excel reports.",
-                tech: "Built an end-to-end pipeline: raw data was extracted from SQL Server using optimized views and joins, cleaned and transformed using Python (Pandas), then loaded into Power BI. Power Query handled final shaping. The dashboards use dynamic measures and a date table for accurate time intelligence."
-            },
-
+project2: {
+    title: "Retail Store Sales Dashboard",
+    githubUrl: "https://github.com/OmarFares134/Retail-Sales-Dashboard",
+    images: [
+        "images/second_project/dashboard_sales_overview.png",
+        "images/second_project/dashboard_product_operations.png"
+    ],
+    problem: "A retail store needed a centralized view of its sales performance across multiple dimensions — time, product, location, payment method, and day of week. Key business questions were unanswered: Which products drive the most revenue? Do discounts actually increase total sales? Are there seasonal or weekly patterns that should influence stocking and staffing decisions?",
+    tools: ["Power BI", "SQL Server", "Python", "Pandas", "Power Query"],
+    insights: [
+        "Sales peaked in 2024 at 529K then dropped sharply to 26K in 2025, signaling a major trend worth investigating.",
+        "Friday is the top-performing day at 254.56K, while Monday lags at 230.76K — a ~10% gap useful for staffing optimization.",
+        "Item_2_BEV dominates product sales at 89,690 — more than 3x the second-best performer.",
+        "Discounted transactions generated 1.12M vs 0.57M without discounts, suggesting discounts significantly drive volume.",
+        "Winter is the strongest sales season at 0.43M, while Autumn is the weakest at 0.37M.",
+        "Payment methods are nearly evenly split: Cash (34%), Credit Card (33%), Digital Wallet (33%)."
+    ],
+    results: "Delivered two production-ready Power BI dashboards covering Sales Overview and Product & Operations Performance. Enabled the business to monitor KPIs like total sales ($1.7M), order count (12K), average basket size (5.56), and avg order value ($141.4) — replacing fragmented manual reporting.",
+    tech: "Built an end-to-end analytics pipeline: raw retail data was cleaned and feature-engineered using Python (Pandas), then SQL Views were created in SQL Server to pre-aggregate key metrics. Power BI connected to these views via Power Query for final shaping. Dashboards include dynamic filters by category, year, and season, with measures for time-based and categorical breakdowns."
+},
             // ── Project 3: Olist ────────────────────
             project3: {
                 title: "Olist E-Commerce — End-to-End Analytics Project",
                 githubUrl: "https://github.com/OmarFares134/olist-ecommerce-analytics",
-                images: [           "images/second_project/dashboard_landing.png"
+                images: [           "images/second_project/dashboard_landing.png",
                                     "images/second_project/dashboard_executive.png",
                                     "images/second_project/dashboard_customer.png",
                                     "images/second_project/dashboard_marketplace.png",
@@ -1614,6 +1613,7 @@ project1: {
     </script>
 </body>
 </html>
+
 
 
 
