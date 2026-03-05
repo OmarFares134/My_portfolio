@@ -873,7 +873,6 @@
 
     <!-- ============================================================
          HERO SECTION
-         Contains: Name + Title + Strong Value Proposition + CTA Buttons
          ============================================================ -->
     <section id="hero">
         <div class="container hero-container">
@@ -1002,6 +1001,7 @@
                         <i data-lucide="code-2"></i> Programming & Libraries
                     </div>
                     <div class="skill-tags">
+                        <span class="skill-tag">SQL</span>
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">NumPy</span>
                         <span class="skill-tag">Pandas</span>
@@ -1018,7 +1018,6 @@
                     </div>
                     <div class="skill-tags">
                         <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Tableau</span>
                         <span class="skill-tag">Jupyter Notebook</span>
                         <span class="skill-tag">Excel</span>
                         <span class="skill-tag">Power Pivot</span>
@@ -1039,6 +1038,7 @@
                         <span class="skill-tag">EDA</span>
                         <span class="skill-tag">Data Wrangling</span>
                         <span class="skill-tag">Statistical Analysis</span>
+                        <span class="skill-tag">Web Scrabing</span>
                         <span class="skill-tag">data warehousing </span>
                         <span class="skill-tag">Trend Recognition</span>
                         <span class="skill-tag">Pattern Recognition</span>
@@ -1051,50 +1051,45 @@
 
     <!-- ============================================================
          PROJECTS SECTION
-         Each card has TWO options:
-           1. GitHub Button  → opens the GitHub repository in a new tab
-           2. Details Button → opens a full project details modal overlay
-              containing: images, problem statement, tools, insights,
-              results/impact, and a short technical explanation.
          ============================================================ -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title reveal"><span style="color:var(--accent); font-size:0.7em; margin-right:10px;">03.</span>Selected Projects</h2>
             
             <div class="projects-grid">
-
-                <!-- ── PROJECT 1: Coffee Shop BI Suite ─────────────── -->
+                 <!-- ── PROJECT 3 ──────────── -->
                 <div class="project-card reveal">
                     <div class="project-thumbnail">
-                        <img src="images/3rd_project.png" alt="Coffee Shop BI Suite">
+                        <img src="images/2nd_project.png" alt="Market Sales Analytics">
                     </div>
                     <div class="project-content">
                         <div class="project-header-row">
                             <i data-lucide="folder" class="folder-icon"></i>
                         </div>
-                        <h3 class="project-title">Coffee Shop Business Intelligence Suite</h3>
+                        <h3 class="project-title">Olist Brazilian E-Commerce Analytics</h3>
                         <p class="project-desc">
-                            A complete end-to-end Power BI project analyzing a coffee shop business across five dashboards: Sales, Customers, Products, Branch Operations, and Inventory.
+                            A complete end-to-end Power BI project analyzing a large-scale e-commerce business across five dashboards: Executive Overview, Customer Intelligence, Sellers Performance, Operations, and Finance & Payments.                        
                         </p>
                         <div class="project-tags">
-                            <span>Power BI</span>
+                            <span>SQL</span>
                             <span>Python</span>
-                            <span>Power Query</span>
+                            <span>Power BI</span>
+                            <span>DAX</span>
                         </div>
 
                         <!-- Dual Action Buttons -->
                         <div class="project-actions">
-                            <!-- Option 1: Go to GitHub -->
-                            <a href="https://github.com/OmarFares134/Coffee-Shop-Business-Intelligence-Suite." target="_blank" class="btn-project btn-github">
+                            <a href="https://github.com/OmarFares134/olist-ecommerce-analytics" target="_blank" class="btn-project btn-github">
                                 <i data-lucide="github"></i> GitHub Repo
                             </a>
-                            <!-- Option 2: Open Project Details Modal -->
-                            <button class="btn-project btn-details" onclick="openProjectModal('project1')">
+                            <button class="btn-project btn-details" onclick="openProjectModal('project3')">
                                 <i data-lucide="layout-dashboard"></i> Project Details
                             </button>
                         </div>
                     </div>
                 </div>
+
+                
 
                 <!-- ── PROJECT 2: Sales Performance Dashboard ─────── -->
                 <div class="project-card reveal">
@@ -1128,36 +1123,41 @@
                     </div>
                 </div>
 
-                <!-- ── PROJECT 3: Market Sales Analytics ──────────── -->
+                
+                <!-- ── PROJECT 1: Coffee Shop BI Suite ─────────────── -->
                 <div class="project-card reveal">
                     <div class="project-thumbnail">
-                        <img src="images/2nd_project.png" alt="Market Sales Analytics">
+                        <img src="images/3rd_project.png" alt="Coffee Shop BI Suite">
                     </div>
                     <div class="project-content">
                         <div class="project-header-row">
                             <i data-lucide="folder" class="folder-icon"></i>
                         </div>
-                        <h3 class="project-title">Market Sales Analytics</h3>
+                        <h3 class="project-title">Coffee Shop Business Intelligence Suite</h3>
                         <p class="project-desc">
-                            Used Excel, Power Query, and Power Pivot to clean data, perform EDA, and build an interactive dashboard with PivotTables, PivotCharts, and slicers revealing sales KPIs.
+                            A complete end-to-end Power BI project analyzing a coffee shop business across five dashboards: Sales, Customers, Products, Branch Operations, and Inventory.
                         </p>
                         <div class="project-tags">
-                            <span>Excel</span>
+                            <span>Power BI</span>
+                            <span>Python</span>
                             <span>Power Query</span>
-                            <span>Power Pivot</span>
                         </div>
 
                         <!-- Dual Action Buttons -->
                         <div class="project-actions">
-                            <a href="https://github.com/OmarFares134/Market_sales_Excel-Dashboard" target="_blank" class="btn-project btn-github">
+                            <!-- Option 1: Go to GitHub -->
+                            <a href="https://github.com/OmarFares134/Coffee-Shop-Business-Intelligence-Suite." target="_blank" class="btn-project btn-github">
                                 <i data-lucide="github"></i> GitHub Repo
                             </a>
-                            <button class="btn-project btn-details" onclick="openProjectModal('project3')">
+                            <!-- Option 2: Open Project Details Modal -->
+                            <button class="btn-project btn-details" onclick="openProjectModal('project1')">
                                 <i data-lucide="layout-dashboard"></i> Project Details
                             </button>
                         </div>
                     </div>
                 </div>
+
+               
 
             </div><!-- end .projects-grid -->
         </div>
@@ -1199,7 +1199,7 @@
             </p>
             
             <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="/cdn-cgi/l/email-protection#9eadf1f3ffecafaeaea7a7def9f3fff7f2b0fdf1f3" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
+                <a href="3omar10099@gmail.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
                     <i data-lucide="mail"></i> Email Me
                 </a>
                 <a href="https://wa.me/+201012648879" target="_blank" class="btn btn-whatsapp" style="padding: 16px 32px; font-size: 1.1rem;">
@@ -1208,7 +1208,7 @@
             </div>
             
             <div style="margin-top: 50px; display: flex; justify-content: center; gap: 24px;">
-                <a href="https://www.linkedin.com/in/omar-fares-872294191/" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
+                <a href="www.linkedin.com/in/omar-fares10" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
                     <i data-lucide="linkedin" width="24" height="24"></i>
                 </a>
                 <a href="https://github.com/OmarFares134" target="_blank" style="color: var(--text-secondary); transition: color 0.3s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-secondary)'">
@@ -1392,21 +1392,36 @@
         const projectData = {
 
             // ── Project 1: Coffee Shop BI Suite ──────────────────────
-            project1: {
-                title: "Coffee Shop Business Intelligence Suite",
-                githubUrl: "https://github.com/OmarFares134/Coffee-Shop-Business-Intelligence-Suite.",
-                images: ["images/3rd_project.png"],
-                problem: "The coffee shop chain lacked a unified view of their operations across multiple branches. Management had no clear visibility into which products drove profit, how inventory was performing, or what customer segments were most valuable.",
-                tools: ["Power BI", "Python", "Pandas", "Power Query", "DAX", "Star Schema Modeling"],
-                insights: [
-                    "Top 20% of products generated over 65% of total revenue.",
-                    "Branch #3 showed the highest operational efficiency by OEE metrics.",
-                    "Customer retention dropped significantly during Q2 — linked to a seasonal menu change.",
-                    "Inventory waste was highest in perishable add-ons, suggesting over-ordering."
-                ],
-                results: "Management adopted the dashboards as their primary decision tool, reducing weekly reporting time by ~4 hours. Branch operations improved after acting on inventory insights.",
-                tech: "Data was extracted, cleaned, and modeled into a star schema using Python (Pandas) and Power Query. Five interconnected Power BI dashboards were built with shared DAX measures including Revenue, Profit, Margin %, and YTD comparisons. Slicers and cross-filtering allow drill-down at branch, product, and time levels."
-            },
+project1: {
+    title: "Coffee Shop Business Intelligence Suite",
+    githubUrl: "https://github.com/OmarFares134/Coffee-Shop-Business-Intelligence-Suite.",
+    images: [
+        "images/first_project/sales.png",
+        "images/first_project/customers.png",
+        "images/first_project/time.png",
+        "images/first_project/poduct.png",
+        "images/first_project/finance.png"
+    ],
+    problem: "Brew Lab, a multi-branch coffee shop operating across Alexandria, Cairo, and Giza, lacked a centralized view of its sales performance, customer behavior, product profitability, and seasonal trends — making data-driven decisions difficult for management.",
+    tools: [
+        "Python (EDA & Data cleaning)"
+        "Power BI (Dashboard & Visualizations)",
+        "DAX (Calculated KPIs & Measures)",
+        "Power Query (Data Transformation)",
+        "Excel (Data Source)"
+    ],
+    insights: [
+        "Caramel Frappe is the top-selling product with EGP 62,300 in sales and EGP 37,380 in profit",
+        "Hot Drinks dominate revenue at 40.4% of total sales, closely followed by Cold Drinks at 41.45%",
+        "Peak sales occur on Tuesdays, in October, and at 1:00 PM",
+        "89.8% customer retention rate with 65.9% active membership rate",
+        "Gold members make up 34.8% of the membership base, indicating strong loyalty program engagement",
+        "Customer base is nearly gender-balanced: 51.88% Male vs 48.1% Female",
+        "ROI stands at 166.1% with a gross profit of EGP 44K against a total cost of EGP 66K"
+    ],
+    results: "Delivered a 5-page interactive Power BI dashboard covering Sales Overview, Product Performance, Customer Analytics, Time & Season Trends, and Financial & Profitability — enabling branch-level filtering and actionable insights that support inventory planning, marketing targeting, and profitability optimization.",
+    tech: "Built a multi-page Power BI report using DAX to create dynamic KPI measures (LTV, retention rate, profit margin, ROI) and Power Query for data cleaning and transformation. Implemented cross-page slicers for branch and payment method filtering, and used a combination of bar charts, pie/donut charts, line charts, and treemaps to surface trends across sales, customer segmentation, product performance, and seasonality."
+},
 
             // ── Project 2: Sales Performance Dashboard ───────────────
             project2: {
@@ -1543,3 +1558,4 @@
     </script>
 </body>
 </html>
+
