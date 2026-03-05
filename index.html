@@ -1415,7 +1415,7 @@
             </p>
             
             <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
-                <a href="mailto:3omar10099@gmail.com" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
+                <a href="/cdn-cgi/l/email-protection#42712d2f23307372727b7b02252f232b2e6c212d2f" class="btn btn-primary" style="padding: 16px 32px; font-size: 1.1rem;">
                     <i data-lucide="mail"></i> Email Me
                 </a>
                 <a href="https://wa.me/+201012648879" target="_blank" class="btn btn-whatsapp" style="padding: 16px 32px; font-size: 1.1rem;">
@@ -1442,7 +1442,7 @@
     </footer>
 
     <!-- JAVASCRIPT -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // 1. Initialize Icons
         lucide.createIcons();
 
@@ -1708,25 +1708,8 @@ project2: {
   "YoY revenue comparison shows 2018 consistently outpacing 2017 month-by-month through mid-year before flattening — growth was real but slowing"
                           ],
                 results: "Delivered a 5-dashboard interactive Power BI report built on a Galaxy Schema data model with 19 active relationships, 19 T-SQL analytical views, and 81 DAX measures — transforming 100,000+ raw orders into 22 actionable business insights across revenue growth, customer retention, seller performance, delivery operations, and payment analysis.",
-  tech: {
-    language: ["Python", "SQL", "DAX"],
-    libraries: ["Pandas", "Matplotlib", "Seaborn"],
-    database: "SQL Server",
-    dataModel: "Galaxy Schema (Fact Constellation)",
-    views: 15,
-    dashboards: 5,
-    daxMeasures: 81,
-    advancedFeatures: [
-      "RFM Segmentation",
-      "Cohort Retention Matrix",
-      "Pareto Analysis",
-      "Seller Health Scoring",
-      "Time Intelligence (MoM%, YoY%, YTD, 3M Moving Average)",
-      "Bookmark Navigation",
-      "Tooltip Pages",
-      "Conditional Formatting",
-      "Geographic Revenue Mapping"
-    ]    }
+  tech: "Built on a Galaxy Schema data model with 19 active relationships and 19 T-SQL analytical views in SQL Server. Python (Pandas, Matplotlib, Seaborn) handled EDA and data cleaning. Power BI consumed the views via Power Query, with 81 DAX measures covering Time Intelligence (MoM%, YoY%, YTD, 3-month moving average), RFM Segmentation, Cohort Retention Matrix, Pareto Analysis, and Seller Health Scoring. Advanced features include Bookmark Navigation, Tooltip Pages, Conditional Formatting, and Geographic Revenue Mapping."
+            }
         };
 
         // ── openProjectModal(projectId) ──────────────────────────────
@@ -1800,8 +1783,8 @@ project2: {
             document.getElementById('project-modal-overlay').style.display = 'block';
             document.body.style.overflow = 'hidden'; // Lock background scroll
 
-            // Re-run Lucide to render icons injected dynamically
-            lucide.createIcons();
+            // Re-run Lucide to render icons injected dynamically, scoped to modal only
+            lucide.createIcons({ nameAttr: 'data-lucide', node: document.getElementById('modal-body') });
         }
 
         // ── closeProjectModal() ──────────────────────────────────────
@@ -1825,12 +1808,6 @@ project2: {
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeProjectModal();
         });
-
     </script>
 </body>
 </html>
-
-
-
-
-
